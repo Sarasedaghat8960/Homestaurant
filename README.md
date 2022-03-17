@@ -8,4 +8,4 @@ I want to create a website that help people to find the receipt of the food and 
 3.	 Vegetarians
 4.	Persons who consume animal-derived products 
 5.	Families who have children
-## THis application is made with # React 
+## THis application is made with  React 
