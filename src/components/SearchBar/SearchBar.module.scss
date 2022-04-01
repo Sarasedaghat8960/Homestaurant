@@ -1,19 +1,22 @@
-.searchBar {
-  height: 250px;
-  background-color: goldenrod;
+.searchForm1,
+.searchForm2 {
+  min-height: 10vh;
+  align-items: center;
+  justify-content: center;
+  display: flex;
 }
-.searchReceipt {
-  color: black;
-  border-radius: 5px;
-  width: 350px;
-  height: 35px;
-  margin-right: 10px;
+
+.searchReceipt1,
+.searchReceipt2 {
+  border: none;
+  width: 40%;
+  padding: 10px;
 }
 .searchReceiptButton {
-  color: black;
-  border-radius: 5px;
-  width: 150px;
-  height: 40px;
+  background-color: lightcoral;
+  border: none;
+  padding: 10px 20px;
+  color: white;
 }
 .alert {
   color: red;

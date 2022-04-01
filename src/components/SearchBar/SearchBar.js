@@ -1,5 +1,6 @@
 import styles from './SearchBar.module.scss'
 import React, { useState } from 'react'
+
 export default function SearchBar({setSearch,setIsFoodSearched,setIsIngredientSearched,setIngredient1}) {
  const [input,setInput]=useState("");
  const [ingInput,setIngInput]=useState("");
@@ -16,8 +17,8 @@ export default function SearchBar({setSearch,setIsFoodSearched,setIsIngredientSe
        
 
     }
-    
   }
+  console.log("input",input);
   const getIngredientValue=()=>{
     console.log("IngInput:",ingInput);
     if(ingInput){
@@ -30,29 +31,31 @@ export default function SearchBar({setSearch,setIsFoodSearched,setIsIngredientSe
   }
 
   return (
-   
-    <div className={styles.searchBar}>
-      <p>Search with food name  : </p>
+    <>
+    <div className={styles.searchForm1}  > 
+    <input type="text" placeholder='Type food name' className={styles.searchReceipt1}  onChange={(event)=> setInput(event.target.value)} />
+      <button type="submit"  className={styles.searchReceiptButton}  onClick={getInputValue}>Search Receipt with food name</button>
+      {/* {(emptyInput==true)?
+      
+     <p className={styles.alert}>Search box is EMPTY</p> 
      
-     {/* <form className={styles.search-form}>  */}
-      <input type="text" placeholder='Type food name' className={styles.searchReceipt}  onChange={(event)=> setInput(event.target.value)}/>
-      <button type="submit"  className={styles.searchReceiptButton} onClick={getInputValue}>Search Receipt</button>
-      {(emptyInput==true)?
-     <p className={styles.alert}>Search box is EMPTY</p> 
     :<p></p>
-    }
-    {/* </form> */}
-    <p>Search with ingredient name  : </p>
+    } */}
+   
+     </div> 
+    <div className={styles.searchForm2}>
+  
      {/* <form className={styles.search-form}>  */}
-     <input type="text" placeholder='Type ingredient' className={styles.searchReceipt}  onChange={(event)=> setIngInput(event.target.value)}/>
+     <input type="text" placeholder='Type ingredient' className={styles.searchReceipt2}  onChange={(event)=> setIngInput(event.target.value)}/>
       <button type="submit"  className={styles.searchReceiptButton} onClick={getIngredientValue}>Search Receipt with ingredient</button>
-      {(emptyIngInput==true)?
-     <p className={styles.alert}>Search box is EMPTY</p> 
+      {/* {(emptyIngInput==true)?
+      
+     <p className={styles.alert}>Search box is EMPTY</p>
+       
     :<p></p>
-    }
+    } */}
     {/* </form> */}
     </div>
-    
-    
+    </>
   )
 }

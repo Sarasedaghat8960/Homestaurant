@@ -4,16 +4,23 @@ import { uuid } from 'uuidv4'
 
 export default function MainPart({title,image,ingredients}) {
   return (
-    <>
-    <div>
-      <h1 >{title}</h1>
-      <ol>
-        {ingredients.map(ingredient=>(<li >{ingredient.text}</li>))}
-      </ol>
-      <img src={image} alt=''/>
+    <section className={styles.MainPart}>
+    <div className={styles.receiptContainer}>
+      <div className={styles.receiptText}>
+        <h1 >{title}</h1>
+        <ol>
+          {ingredients.map(ingredient=>(<li >{ingredient.text}</li>))}
+        </ol>
+
+      </div>
+     <div className={styles.receiptImage}>
+     <img src={image} alt='receipt Image' className={styles.image} />
+
+     </div>
+      
     </div>
     
-    </>
+    </section>
     
   )
 }

@@ -15,11 +15,11 @@ function App() {
   const [ingredient1,setIngredient1]=useState("")
   
   const ApiUrlFood= `https://api.edamam.com/search?q=${search}&app_id=${ApplicationID}&app_key=${ApplicationKey}&imageSize=SMALL`
-  const ApiUrlIngredient=`https://api.edamam.com/api/recipes/v2?type=public&q=${search}&app_id=${ApplicationID}&app_key=${ApplicationKey}&imageSize=SMALL&` 
+ // const ApiUrlIngredient=`https://api.edamam.com/api/recipes/v2?type=public&q=${search}&app_id=${ApplicationID}&app_key=${ApplicationKey}&imageSize=SMALL&` 
   console.log("ingredient from app",ingredient1);
-console.log(ApiUrlIngredient);
+console.log(ApiUrlFood);
   useEffect(()=>{
-    fetch(ApiUrlIngredient)
+    fetch(ApiUrlFood)
    .then(res=>res.json())
    .then(result=> {
      console.log(result);
@@ -34,11 +34,15 @@ console.log(ApiUrlIngredient);
   <div>
     <Header/>
     <SearchBar search={search} setSearch={setSearch}  setIsFoodSearched={setIsFoodSearched} setIsIngredientSearched={setIsIngredientSearched} setIngredient1={setIngredient1}  />
+<div className='receipts'>
 
-    {(isFoodSearched==true ) || (isIngredientSearched==true)?
-    receipts.map(receipt=> 
+{receipts.map(receipt=> 
        <MainPart title={receipt.recipe.label} image={receipt.recipe.image} ingredients={receipt.recipe.ingredients} />
-      ): <p >Nothing searched</p> }
+      )}
+
+</div>
+    
+
     
     <Footer/>
 

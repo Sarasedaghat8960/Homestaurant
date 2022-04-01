@@ -7,8 +7,8 @@ export default function Header() {
     <>
     
     <div className={styles.header}>
-      <h1>Header</h1>
-     <img src={Logo}/>
+     
+     <img src={Logo} className={styles.logo}/>
     
     </div>
    
