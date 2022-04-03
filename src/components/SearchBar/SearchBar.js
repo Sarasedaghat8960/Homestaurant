@@ -6,6 +6,7 @@ export default function SearchBar({setSearch,setIsFoodSearched,setIsIngredientSe
  const [ingInput,setIngInput]=useState("");
  const [emptyInput,setEmptyInput]=useState(false);
  const [emptyIngInput,setEmptyIngInput]=useState(false);
+ const checkList = ["Vegan", "Children favorite", "Animal product consumer"];
 
   const getInputValue=()=>{
     console.log("input:",input);
@@ -32,7 +33,9 @@ export default function SearchBar({setSearch,setIsFoodSearched,setIsIngredientSe
 
   return (
     <>
-    <div className={styles.searchForm1}  > 
+    <div className={styles.searchContainer}>
+
+    <div className={styles.searchForm}  > 
     <input type="text" placeholder='Type food name' className={styles.searchReceipt1}  onChange={(event)=> setInput(event.target.value)} />
       <button type="submit"  className={styles.searchReceiptButton}  onClick={getInputValue}>Search Receipt with food name</button>
       {/* {(emptyInput==true)?
@@ -43,7 +46,7 @@ export default function SearchBar({setSearch,setIsFoodSearched,setIsIngredientSe
     } */}
    
      </div> 
-    <div className={styles.searchForm2}>
+    <div className={styles.searchForm}>
   
      {/* <form className={styles.search-form}>  */}
      <input type="text" placeholder='Type ingredient' className={styles.searchReceipt2}  onChange={(event)=> setIngInput(event.target.value)}/>
@@ -56,6 +59,23 @@ export default function SearchBar({setSearch,setIsFoodSearched,setIsIngredientSe
     } */}
     {/* </form> */}
     </div>
+    <div className={styles.searchForm}>
+    <div className={styles.listContainer}>
+    <div className={styles.userTypeText} >User type : </div>
+
+      {checkList.map((item, index) => (
+         <div key={index} className={styles.userType}>
+           <input value={item} type="checkbox"/>
+           <span>{item}</span>
+         </div>
+      ))}
+    </div>
+    <button type="submit"  className={styles.searchReceiptButton} onClick={getIngredientValue}>Search Receipt with user type</button>
+
+  </div>
+
+    </div>
+    
     </>
   )
 }

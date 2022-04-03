@@ -1,5 +1,7 @@
-.searchForm1,
-.searchForm2 {
+.searchContainer {
+  color: black;
+}
+.searchForm {
   min-height: 10vh;
   align-items: center;
   justify-content: center;
@@ -20,4 +22,16 @@
 }
 .alert {
   color: red;
+}
+.listContainer {
+  display: flex;
+  width: 40%;
+  padding: 10px;
+  background-color: white;
+}
+.userType {
+  flex-direction: row;
+}
+.userTypeText {
+  font-weight: 700;
 }

@@ -15,7 +15,8 @@ function App() {
   const [ingredient1,setIngredient1]=useState("")
   
   const ApiUrlFood= `https://api.edamam.com/search?q=${search}&app_id=${ApplicationID}&app_key=${ApplicationKey}&imageSize=SMALL`
- // const ApiUrlIngredient=`https://api.edamam.com/api/recipes/v2?type=public&q=${search}&app_id=${ApplicationID}&app_key=${ApplicationKey}&imageSize=SMALL&` 
+ const API2="www.themealdb.com/api/json/v1/1/random.php"
+ console.log("API2",API2);
   console.log("ingredient from app",ingredient1);
 console.log(ApiUrlFood);
   useEffect(()=>{
@@ -24,8 +25,8 @@ console.log(ApiUrlFood);
    .then(result=> {
      console.log(result);
      setReceipts(result.hits);
-     
   })
+  
     },[search])
   console.log("Search from app",search);
   console.log("receipt from app",receipts);
