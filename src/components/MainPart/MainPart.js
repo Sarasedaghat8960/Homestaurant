@@ -2,7 +2,7 @@ import styles from './MainPart.module.scss'
 import React from 'react'
 import { uuid } from 'uuidv4'
 
-export default function MainPart({title,image,ingredients}) {
+export default function MainPart({title,image,ingredients,link}) {
   return (
     <section className={styles.MainPart}>
     <div className={styles.receiptContainer}>
@@ -15,11 +15,11 @@ export default function MainPart({title,image,ingredients}) {
       </div>
      <div className={styles.receiptImage}>
      <img src={image} alt='receipt Image' className={styles.image} />
-
      </div>
-      
+     <a href={link}>Click to see more</a>
+
     </div>
-    
+
     </section>
     
   )

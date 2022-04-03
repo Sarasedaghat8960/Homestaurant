@@ -1,7 +1,7 @@
 import styles from './SearchBar.module.scss'
 import React, { useState } from 'react'
 
-export default function SearchBar({setSearch,setIsFoodSearched,setIsIngredientSearched,setIngredient1}) {
+export default function SearchBar({setSearch,setIsFoodSearched,setIsIngredientSearched,setIngredient}) {
  const [input,setInput]=useState("");
  const [ingInput,setIngInput]=useState("");
  const [emptyInput,setEmptyInput]=useState(false);
@@ -13,8 +13,9 @@ export default function SearchBar({setSearch,setIsFoodSearched,setIsIngredientSe
     if(input){
       setSearch(input);
     setIsFoodSearched(true);
-    }else{
-       setEmptyInput(true)
+    setIsIngredientSearched(false);
+    // }else{
+    //    setEmptyInput(true)
        
 
     }
@@ -23,12 +24,14 @@ export default function SearchBar({setSearch,setIsFoodSearched,setIsIngredientSe
   const getIngredientValue=()=>{
     console.log("IngInput:",ingInput);
     if(ingInput){
-    setIngredient1(ingInput);
+    setIngredient(ingInput);
     setIsIngredientSearched(true)
-    }else{
-       setEmptyIngInput(true)
+    setIsFoodSearched(false)
+     }
+     //else{
+    //    setEmptyIngInput(true)
 
-    }
+    // }
   }
 
   return (
