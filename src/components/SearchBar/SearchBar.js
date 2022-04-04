@@ -53,14 +53,14 @@ console.log(item);
     <div className={styles.searchContainer}>
 
     <div className={styles.searchForm}  > 
-    <input type="text" placeholder='Type food name' className={styles.searchReceipt1}  onChange={(event)=> setInput(event.target.value)} />
+    <input type="text" placeholder='Type food name'  key={input} className={styles.searchReceipt1}  onChange={(event)=> setInput(event.target.value)} />
       <button type="submit"  className={styles.searchReceiptButton}  onClick={getInputValue}>Search Receipt with food name</button>
          
      </div> 
     <div className={styles.searchForm}>
   
      {/* <form className={styles.search-form}>  */}
-     <input type="text" placeholder='Type ingredient' className={styles.searchReceipt2}  onChange={(event)=> setIngInput(event.target.value)}/>
+     <input type="text" placeholder='Type ingredient' key={ingInput}className={styles.searchReceipt2}  onChange={(event)=> setIngInput(event.target.value)}/>
       <button type="submit"  className={styles.searchReceiptButton} onClick={getIngredientValue}>Search Receipt with ingredient</button>
   
     {/* </form> */}
@@ -72,7 +72,7 @@ console.log(item);
       {checkList.map((item, index) => (
          
          
-            <option value={item.value}>{item.name}</option>
+            <option value={item.value} key={item.value}>{item.name}</option>
             
          ))}
          

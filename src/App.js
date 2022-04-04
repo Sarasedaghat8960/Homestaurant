@@ -103,9 +103,9 @@ useEffect(()=>{
      
      {(isUserSearched)?
         <div className='receipts'>
-          {mealsWithUsers.map(recipe=>
+           {mealsWithUsers.map(recipe=>
             <UserSearchedPart title={recipe.strMeal} image={recipe.strMealThumb} id={recipe.idMeal}/>
-          ) }
+          ) } 
           {/* <p>HELLO from {user}</p> */}
       </div>
       :
@@ -113,11 +113,9 @@ useEffect(()=>{
       } 
       {(!isIngredientSearched && !isFoodSearched && !isUserSearched)?
        <div className='receipts'>
-            {/* {receipts.map(recipe=> 
-              <MainPart title={recipe.recipe.label} image={recipe.recipe.image} ingredients={recipe.recipe.ingredients} link={recipe.recipe.url} />
-              )} */}
+            
                {meals.map(recipe=> 
-              <MainPart title={recipe.strMeal} image={recipe.strMealThumb} instruction={recipe.strInstructions} youtube={recipe.strYoutube} />
+              <MainPart title={recipe.strMeal} image={recipe.strMealThumb} instruction={recipe.strInstructions} youtube={recipe.strYoutube} key={recipe.idMeal}/>
               )} 
        </div> 
     :
