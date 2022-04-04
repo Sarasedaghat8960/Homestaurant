@@ -11,7 +11,7 @@ export default function IngredientSearchedPart({title,image,id}) {
     fetch(API)
     .then(res=>res.json())
     .then(result=>{
-      console.log(result.meals[0]);
+      // console.log(result.meals[0]);
 
      setInstruction(result.meals[0].strInstructions)
      setYoutube(result.meals[0].strYoutube)
