@@ -1,19 +1,23 @@
 import styles from './SearchBar.module.scss'
 import React, { useState } from 'react'
 
-export default function SearchBar({setSearch,setIsFoodSearched,setIsIngredientSearched,setIngredient}) {
+
+export default function SearchBar({setSearch,setIsFoodSearched,setIsIngredientSearched,setIsUserSearched,setIngredient,setUser}) {
  const [input,setInput]=useState("");
  const [ingInput,setIngInput]=useState("");
  const [emptyInput,setEmptyInput]=useState(false);
  const [emptyIngInput,setEmptyIngInput]=useState(false);
- const checkList = ["Vegan", "Children favorite", "Animal product consumer"];
-
+ const checkList = [{name:"",value:""},{name:"Vegan", value:"Vegan"},{name:"Vegeterian", value:"Vegetarian"},{name:"Sea food lover", value:"Seafood"},{name:"Meat lover", value:"Beef"},{name:"Children Favourite Food", value:"Pasta"},{name:"Children Favourite Dessert", value:"Dessert"}];
+ const [value, setValue]=useState("")
+const [checked,setChecked]=useState(true)
   const getInputValue=()=>{
     console.log("input:",input);
     if(input){
       setSearch(input);
     setIsFoodSearched(true);
     setIsIngredientSearched(false);
+    setIsUserSearched(false)
+
     // }else{
     //    setEmptyInput(true)
        
@@ -27,11 +31,21 @@ export default function SearchBar({setSearch,setIsFoodSearched,setIsIngredientSe
     setIngredient(ingInput);
     setIsIngredientSearched(true)
     setIsFoodSearched(false)
-     }
-     //else{
-    //    setEmptyIngInput(true)
+    setIsUserSearched(false)
 
-    // }
+     }
+    
+  }
+  const handleChecked=()=>{
+console.log(item);
+  }
+  const getUserValue=()=>{
+    
+      console.log(value);
+      setUser(value)
+      setIsFoodSearched(false);
+    setIsIngredientSearched(false);
+    setIsUserSearched(true)
   }
 
   return (
@@ -41,39 +55,32 @@ export default function SearchBar({setSearch,setIsFoodSearched,setIsIngredientSe
     <div className={styles.searchForm}  > 
     <input type="text" placeholder='Type food name' className={styles.searchReceipt1}  onChange={(event)=> setInput(event.target.value)} />
       <button type="submit"  className={styles.searchReceiptButton}  onClick={getInputValue}>Search Receipt with food name</button>
-      {/* {(emptyInput==true)?
-      
-     <p className={styles.alert}>Search box is EMPTY</p> 
-     
-    :<p></p>
-    } */}
-   
+         
      </div> 
     <div className={styles.searchForm}>
   
      {/* <form className={styles.search-form}>  */}
      <input type="text" placeholder='Type ingredient' className={styles.searchReceipt2}  onChange={(event)=> setIngInput(event.target.value)}/>
       <button type="submit"  className={styles.searchReceiptButton} onClick={getIngredientValue}>Search Receipt with ingredient</button>
-      {/* {(emptyIngInput==true)?
-      
-     <p className={styles.alert}>Search box is EMPTY</p>
-       
-    :<p></p>
-    } */}
+  
     {/* </form> */}
     </div>
     <div className={styles.searchForm}>
     <div className={styles.listContainer}>
     <div className={styles.userTypeText} >User type : </div>
-
+      <select value={value} onChange={(e)=>setValue(e.target.value)}>
       {checkList.map((item, index) => (
-         <div key={index} className={styles.userType}>
-           <input value={item} type="checkbox"/>
-           <span>{item}</span>
-         </div>
-      ))}
+         
+         
+            <option value={item.value}>{item.name}</option>
+            
+         ))}
+         
+    </select>
+
     </div>
-    <button type="submit"  className={styles.searchReceiptButton} onClick={getIngredientValue}>Search Receipt with user type</button>
+   
+    <button type="submit"  className={styles.searchReceiptButton} onClick={getUserValue}>Search Receipt with user type</button>
 
   </div>
 

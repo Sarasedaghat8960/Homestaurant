@@ -13,7 +13,7 @@ export default function FoodSearchedPart({title,image,instruction,youtube}) {
         <h1  className={styles.mealTitle}>{title}</h1>
        
          <p>{instruction.substring(0,100)+"..."}</p>
-         <a href={youtube}>See youtube</a>
+         <a href={youtube}>Watch youtube</a>
       </div>
      
 

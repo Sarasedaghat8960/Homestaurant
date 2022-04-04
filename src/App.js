@@ -7,31 +7,35 @@ import SearchBar from './components/SearchBar/SearchBar';
 import {uuid } from 'uuidv4';
 import FoodSearchedPart from './components/FoodSearchedPart/FoodSearchedPart';
 import IngredientSearchedPart from './components/IngredientSearchedPart/IngredientSearchedPart';
+import UserSearchedPart from './components/UserSearchedPart/UserSearchedPart';
 function App() {
   const ApplicationID = "ac02a9fd";
   const ApplicationKey = "e6415acd08e580bf7ff0124a0435dfb8"	;
   const [search,setSearch]=useState([""]);
+  const [ingredient,setIngredient]=useState("")
+  const [user,setUser]=useState("")
   const [receipts,setReceipts]=useState([]);
   const [isFoodSearched,setIsFoodSearched]=useState(false);
   const [isIngredientSearched,setIsIngredientSearched]=useState(false);
-  const [ingredient,setIngredient]=useState("")
+  const [isUserSearched,setIsUserSearched]=useState(false);
   
   const [meals,setMeals]= useState([])
-  const [mealsWIthIngreds,setMealsWithIngreds]= useState([])
-
+  const [mealsWithIngreds,setMealsWithIngreds]= useState([])
+  const [mealsWithUsers,setMealsWithUsers]= useState([])
   const ApiUrlFood= `https://api.edamam.com/search?q=chicken&app_id=${ApplicationID}&app_key=${ApplicationKey}&imageSize=SMALL`
  const APIFood=`https://www.themealdb.com/api/json/v1/1/search.php?s=${search}`
  const APIINGRED=`https://www.themealdb.com/api/json/v1/1/filter.php?i=${ingredient}`
+ const APIUSER=`https://www.themealdb.com/api/json/v1/1/filter.php?c=${user}`
   console.log("ingredient from app",ingredient);
   console.log("APIINGRED",APIINGRED);
-
+  console.log("APIUSER",APIUSER);
   useEffect(()=>{
-     fetch(ApiUrlFood)
-   .then(res=>res.json())
-   .then(result=> {
-     console.log(result);
-     setReceipts(result.hits);
-      })
+  //    fetch(ApiUrlFood)
+  //  .then(res=>res.json())
+  //  .then(result=> {
+  //    console.log(result);
+  //    setReceipts(result.hits);
+  //     })
  //fetch data for searching with food name 
       async function getMeal(){
       const res= await fetch(APIFood);
@@ -53,16 +57,30 @@ function App() {
   }
   getIntMeal();
 },[ingredient])
+useEffect(()=>{
+  //fetch data for searching with user
+  async function getUserMeal(){
+    const res3=await fetch(APIUSER);
+    const data3=await res3.json();
+    console.log("data23",data3);
+    setMealsWithUsers(data3.meals);
+  }
+  getUserMeal();
+},[user])
+
   console.log("Search from app",search);
   console.log("receipt from app",receipts);
+  console.log("user from app",user);
 
  console.log("meals",meals);
- console.log("ingredientsMeal",mealsWIthIngreds);
+ console.log("ingredientsMeal",mealsWithIngreds);
+ console.log("usersMeal",mealsWithUsers);
+
   return ( 
   <div>
     
     <Header/>
-    <SearchBar search={search} setSearch={setSearch}  setIsFoodSearched={setIsFoodSearched} setIsIngredientSearched={setIsIngredientSearched} setIngredient={setIngredient}  />
+    <SearchBar search={search} setSearch={setSearch}  setIsFoodSearched={setIsFoodSearched} setIsIngredientSearched={setIsIngredientSearched} setIngredient={setIngredient} setUser={setUser} setIsUserSearched={setIsUserSearched} />
     
     {(isFoodSearched)?
         <div className='receipts'>
@@ -74,8 +92,8 @@ function App() {
       }
      {(isIngredientSearched)?
         <div className='receipts'>
-          {mealsWIthIngreds.map(recipe=>
-            <IngredientSearchedPart title={recipe.strMeal} image={recipe.strMealThumb} id={recipe.idMeal} ingredient={ingredient} />
+          {mealsWithIngreds.map(recipe=>
+            <IngredientSearchedPart title={recipe.strMeal} image={recipe.strMealThumb} id={recipe.idMeal}  />
         
           ) }
       </div>
@@ -83,11 +101,24 @@ function App() {
       <p></p>
       } 
      
-      {(!isIngredientSearched && !isFoodSearched)?
+     {(isUserSearched)?
+        <div className='receipts'>
+          {mealsWithUsers.map(recipe=>
+            <UserSearchedPart title={recipe.strMeal} image={recipe.strMealThumb} id={recipe.idMeal}/>
+          ) }
+          {/* <p>HELLO from {user}</p> */}
+      </div>
+      :
+      <p></p>
+      } 
+      {(!isIngredientSearched && !isFoodSearched && !isUserSearched)?
        <div className='receipts'>
-            {receipts.map(recipe=> 
+            {/* {receipts.map(recipe=> 
               <MainPart title={recipe.recipe.label} image={recipe.recipe.image} ingredients={recipe.recipe.ingredients} link={recipe.recipe.url} />
-              )}
+              )} */}
+               {meals.map(recipe=> 
+              <MainPart title={recipe.strMeal} image={recipe.strMealThumb} instruction={recipe.strInstructions} youtube={recipe.strYoutube} />
+              )} 
        </div> 
     :
     <p></p>
