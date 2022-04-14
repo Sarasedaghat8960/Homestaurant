@@ -1,99 +1,19 @@
-import { useEffect, useState } from "react";
-import "./App.css";
+import React from 'react'
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Menu from "./components/Menu/Menu";
 import MainPart from "./components/MainPart/MainPart";
 import SearchBar from "./components/SearchBar/SearchBar";
-import { uuid } from "uuidv4";
+
 import FoodSearchedPart from "./components/FoodSearchedPart/FoodSearchedPart";
 import IngredientSearchedPart from "./components/IngredientSearchedPart/IngredientSearchedPart";
 import UserSearchedPart from "./components/UserSearchedPart/UserSearchedPart";
 
-import { SpinnerRoundFilled } from "spinners-react";
-function App() {
-  
-  const [search, setSearch] = useState([""]);
-  const [ingredient, setIngredient] = useState("");
-  const [user, setUser] = useState("");
-  const [isFoodSearched, setIsFoodSearched] = useState(false);
-  const [isIngredientSearched, setIsIngredientSearched] = useState(false);
-  const [isUserSearched, setIsUserSearched] = useState(false);
-
-  const [meals, setMeals] = useState([]);
-  const [mealsWithIngreds, setMealsWithIngreds] = useState([]);
-  const [mealsWithUsers, setMealsWithUsers] = useState([]);
-  const [show, setShow] = useState(false);
-  const APIFood = `https://www.themealdb.com/api/json/v1/1/search.php?s=${search}`;
-  const APIINGRED = `https://www.themealdb.com/api/json/v1/1/filter.php?i=${ingredient}`;
-  const APIUSER = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${user}`;
-  console.log("ingredient from app", ingredient);
-  console.log("APIINGRED", APIINGRED);
-  //fetch data for searching with food name
-  async function getMeal() {
-    const res = await fetch(APIFood);
-    const data1 = await res.json();
-    console.log(data1);
-    setMeals(data1.meals);
-  }
-
-  //fetch data for searching with food ingredients
-  async function getIntMeal() {
-    const res2 = await fetch(APIINGRED);
-    const data2 = await res2.json();
-    console.log("data2", data2);
-    setMealsWithIngreds(data2.meals);
-  }
-  // fetch data for searching with user
-  async function getUserMeal() {
-    const res3 = await fetch(APIUSER);
-    const data3 = await res3.json();
-    console.log("data3", data3);
-    setMealsWithUsers(data3.meals);
-  }
-  // useEffect for search
-  useEffect(() => {
-    getMeal();
-    setShow(false);
-  }, [search]);
-  // useEffect for ingredient
-  useEffect(() => {
-    getIntMeal();
-    setShow(false);
-  }, [ingredient]);
-  // useEffect for user
-  useEffect(() => {
-    getUserMeal();
-    setShow(false);
-  }, [user]);
-  // useEffect for show
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setShow(true);
-    }, 2000);
-
-    return () => clearTimeout(timeout);
-  }, [show]);
-  //   useEffect(()=>{
-  //     getMeal()
-  //  },[search])
-
-  //   useEffect(()=>{
-  //     getUserMeal();
-
-  //     },[user])
-
-  console.log("Search from app", search);
-
-  console.log("user from app", user);
-  console.log("APIUSER", APIUSER);
-  console.log("meals", meals);
-  console.log("ingredientsMeal", mealsWithIngreds);
-  console.log("usersMeal", mealsWithUsers);
-
+//import { SpinnerRoundFilled } from "spinners-react";
+export default function Home({search,setSearch,setIsFoodSearched,setIngredient,setIsFoodSearched,setUser,setIsUserSearched,setIsIngredientSearched,isIngredientSearched,ingredient}) {
   return (
     <div>
-      <Header />
+    <Header />
       <Menu/>
       <SearchBar
         search={search}
@@ -176,20 +96,14 @@ function App() {
         )
       ) : (
         <div className="spinner">
-            <SpinnerRoundFilled size="15%" color="rgb(156, 40, 40)" />
+            {/* <SpinnerRoundFilled size="15%" color="rgb(156, 40, 40)" /> */}
 
         </div>
         
       )}
-      {/* {(isFoodSearched && searchFounded)? */}
+    
 
       <Footer />
-      <div class="bg"></div>
-      <div class="bg bg2"></div>
-      <div class="bg bg3"></div>
-    </div>
-    
-  );
+     </div>
+  )
 }
-
-export default App;

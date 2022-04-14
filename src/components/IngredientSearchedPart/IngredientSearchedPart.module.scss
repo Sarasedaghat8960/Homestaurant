@@ -9,6 +9,8 @@
   border-radius: 5px;
   overflow: hidden;
   display: flex;
+  box-shadow: 0px 5px 20px black;
+  border-radius: 51px;
 }
 .mealImage {
   flex: 1;
@@ -23,6 +25,7 @@
 }
 .mealDetails {
   flex: 2;
+  padding: 20px;
 }
 .mealDetails a {
   color: purple;

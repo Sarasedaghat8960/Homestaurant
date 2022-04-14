@@ -6,3 +6,9 @@
   justify-content: space-between;
   flex-wrap: wrap;
 }
+.searchedText {
+  text-align: center;
+}
+.spinner {
+  text-align: center;
+}
