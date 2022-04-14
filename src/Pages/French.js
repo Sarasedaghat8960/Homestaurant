@@ -3,17 +3,17 @@ import React from 'react'
 import Header from "../components/Header/Header";
 import Menu from "../components/Menu/Menu";
 import styles from './Pages.module.scss'
-import ItalianMeals from "../components/ItalianMeals/ItalianMeals";
+import FrenchMeals from "../components/FrenchMeals/FrenchMeals";
 import Footer from "../components/Footer/Footer";
- function Italian() {
-     const APIITALIAN =`http://www.themealdb.com/api/json/v1/1/filter.php?a=Italian`
-     console.log('API Italian',APIITALIAN);
+ function French() {
+     const APIFrench =`http://www.themealdb.com/api/json/v1/1/filter.php?a=French`
+     console.log('API French',APIFrench);
     const [ItalMeals, setItalMeals] = useState([]);
     
 
   
     async function getItalMeal() {
-        const res = await fetch('https://www.themealdb.com/api/json/v1/1/filter.php?a=Italian');
+        const res = await fetch('https://www.themealdb.com/api/json/v1/1/filter.php?a=French');
         const dataItal = await res.json();
         console.log('ItalMeals',dataItal);
         setItalMeals(dataItal.meals);
@@ -24,7 +24,7 @@ import Footer from "../components/Footer/Footer";
         getItalMeal();
       
       },[]);
-       console.log('Italian Meals ',ItalMeals);
+       console.log('French Meals ',ItalMeals);
 
   return (
     <div>
@@ -32,7 +32,7 @@ import Footer from "../components/Footer/Footer";
       <Menu/>
        <div className={styles.receipts}>
             {ItalMeals.map((recipe) => (
-              <ItalianMeals
+              <FrenchMeals
                 title={recipe.strMeal}
                 image={recipe.strMealThumb}
                id={recipe.idMeal}
@@ -45,4 +45,4 @@ import Footer from "../components/Footer/Footer";
     
   )
 }
-export default Italian;
+export default French;
