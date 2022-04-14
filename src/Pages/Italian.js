@@ -30,7 +30,7 @@ import Footer from "../components/Footer/Footer";
       <Header/>
       <Menu/>
        <div className={styles.receipts}>
-            {ItalMeals.map((recipe) => (
+            {italMeals.map((recipe) => (
               <ItalianMeals
                 title={recipe.strMeal}
                 image={recipe.strMealThumb}

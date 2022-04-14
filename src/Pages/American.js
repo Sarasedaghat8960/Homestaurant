@@ -15,7 +15,7 @@ import Footer from "../components/Footer/Footer";
     async function getItalMeal() {
         const res = await fetch('https://www.themealdb.com/api/json/v1/1/filter.php?a=American');
         const dataAmer = await res.json();
-        console.log('ItalMeals',dataItal);
+        console.log('ItalMeals',dataAmer);
         setAmerMeals(dataAmer.meals);
        
       }
@@ -23,14 +23,14 @@ import Footer from "../components/Footer/Footer";
         getItalMeal();
       
       },[]);
-       console.log('American Meals ',ItalMeals);
+       console.log('American Meals ',amerMeals);
 
   return (
     <div>
       <Header/>
       <Menu/>
        <div className={styles.receipts}>
-            {ItalMeals.map((recipe) => (
+            {amerMeals.map((recipe) => (
               <AmericanMeals
                 title={recipe.strMeal}
                 image={recipe.strMealThumb}
