@@ -8,17 +8,16 @@ import Footer from "../components/Footer/Footer";
  function American() {
      const APIAmerican =`http://www.themealdb.com/api/json/v1/1/filter.php?a=American`
      console.log('API American',APIAmerican);
-    const [ItalMeals, setItalMeals] = useState([]);
+    const [amerMeals, setAmerMeals] = useState([]);
     
 
   
     async function getItalMeal() {
         const res = await fetch('https://www.themealdb.com/api/json/v1/1/filter.php?a=American');
-        const dataItal = await res.json();
+        const dataAmer = await res.json();
         console.log('ItalMeals',dataItal);
-        setItalMeals(dataItal.meals);
-        setInstruction(result.meals[0].strInstructions)
-     setYoutube(result.meals[0].strYoutube)
+        setAmerMeals(dataAmer.meals);
+       
       }
       useEffect(() => {
         getItalMeal();

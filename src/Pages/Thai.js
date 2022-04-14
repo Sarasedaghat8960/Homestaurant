@@ -8,17 +8,16 @@ import Footer from "../components/Footer/Footer";
  function Thai() {
      const APIThai =`http://www.themealdb.com/api/json/v1/1/filter.php?a=Thai`
      console.log('API Thai',APIThai);
-    const [ItalMeals, setItalMeals] = useState([]);
+    const [thaiMeals, setThaiMeals] = useState([]);
     
 
   
     async function getItalMeal() {
         const res = await fetch('https://www.themealdb.com/api/json/v1/1/filter.php?a=Thai');
-        const dataItal = await res.json();
+        const dataThai = await res.json();
         console.log('ItalMeals',dataItal);
-        setItalMeals(dataItal.meals);
-        setInstruction(result.meals[0].strInstructions)
-     setYoutube(result.meals[0].strYoutube)
+        setThaiMeals(dataThai.meals);
+        
       }
       useEffect(() => {
         getItalMeal();

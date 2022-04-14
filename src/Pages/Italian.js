@@ -8,7 +8,7 @@ import Footer from "../components/Footer/Footer";
  function Italian() {
      const APIITALIAN =`http://www.themealdb.com/api/json/v1/1/filter.php?a=Italian`
      console.log('API Italian',APIITALIAN);
-    const [ItalMeals, setItalMeals] = useState([]);
+    const [italMeals, setItalMeals] = useState([]);
     
 
   
@@ -17,14 +17,13 @@ import Footer from "../components/Footer/Footer";
         const dataItal = await res.json();
         console.log('ItalMeals',dataItal);
         setItalMeals(dataItal.meals);
-        setInstruction(result.meals[0].strInstructions)
-     setYoutube(result.meals[0].strYoutube)
+       
       }
       useEffect(() => {
         getItalMeal();
       
       },[]);
-       console.log('Italian Meals ',ItalMeals);
+       console.log('Italian Meals ',italMeals);
 
   return (
     <div>
