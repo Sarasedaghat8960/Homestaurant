@@ -10,7 +10,7 @@ import FoodSearchedPart from "../components/FoodSearchedPart/FoodSearchedPart";
 import IngredientSearchedPart from "../components/IngredientSearchedPart/IngredientSearchedPart";
 import UserSearchedPart from "../components/UserSearchedPart/UserSearchedPart";
 import styles from './Home.module.scss'
-import { SpinnerRoundFilled } from "spinners-react";
+//import { SpinnerRoundFilled } from "spinners-react";
 function Home() {
   //States 
   const [search, setSearch] = useState([""]);
