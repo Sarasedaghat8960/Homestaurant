@@ -1,7 +1,6 @@
 import React from 'react'
 
 
-import {BrowserRouter as NavLink } from 'react-router-dom'
 import { FaHamburger, FaPizzaSlice , FaHome } from 'react-icons/fa'
 import { GiNoodles } from 'react-icons/gi'
 import { GiFrenchFries } from 'react-icons/gi'

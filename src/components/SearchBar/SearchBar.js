@@ -6,8 +6,6 @@ export default function SearchBar({setSearch,setIsFoodSearched,setIsIngredientSe
  const [input,setInput]=useState("");
  const [ingInput,setIngInput]=useState("");
  const [usInput,setUsInput]=useState("");
- const [emptyInput,setEmptyInput]=useState(false);
- const [emptyIngInput,setEmptyIngInput]=useState(false);
  const checkList = [{name:"Select Category",value:""},{name:"Vegan", value:"Vegan"},{name:"Vegeterian", value:"Vegetarian"},{name:"Sea food lover", value:"Seafood"},{name:"Meat lover", value:"Beef"},{name:"Children Favourite Food", value:"Pasta"},{name:"Children Favourite Dessert", value:"Dessert"}];
 
 

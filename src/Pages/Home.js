@@ -5,7 +5,7 @@ import Header from "../components/Header/Header";
 import Menu from "../components/Menu/Menu";
 import MainPart from "../components/MainPart/MainPart";
 import SearchBar from "../components/SearchBar/SearchBar";
-import { uuid } from "uuidv4";
+
 import FoodSearchedPart from "../components/FoodSearchedPart/FoodSearchedPart";
 import IngredientSearchedPart from "../components/IngredientSearchedPart/IngredientSearchedPart";
 import UserSearchedPart from "../components/UserSearchedPart/UserSearchedPart";
@@ -55,7 +55,7 @@ function Home() {
   useEffect(() => {
     getMeal();
     setShow(false);
-  }, [search]);
+  }, []);
   // useEffect for ingredient
   useEffect(() => {
     getIntMeal();
@@ -169,7 +169,7 @@ function Home() {
         )
       ) : (
         <div className={styles.spinner}>
-            <SpinnerRoundFilled size="15%" color="rgb(156, 40, 40)" />
+            {/* <SpinnerRoundFilled size="15%" color="rgb(156, 40, 40)" /> */}
 
         </div>
         
