@@ -1,6 +1,6 @@
 import styles from './FrenchMeals.module.scss'
 import React, { useEffect, useState } from 'react'
-import { uuid } from 'uuidv4'
+
 import YouTubeImg from '../../image/youtube.png'
 import {GiKnifeFork} from 'react-icons/gi'
 import { FaRegHandPointRight } from "react-icons/fa";
@@ -19,7 +19,7 @@ export default function FrenchMeals({title,image,id}) {
   const API=`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`
   console.log(API);
   useEffect(()=>{
-    fetch(API)
+    fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
     .then(res=>res.json())
     .then(result=>{
       // console.log(result.meals[0]);
@@ -32,7 +32,7 @@ export default function FrenchMeals({title,image,id}) {
     <section className={styles.container} >
     <div className={styles.meal}>
     <div className={styles.mealImage} >
-     <img src={image} alt='receipt Image' />
+     <img src={image} alt='receipt' />
      </div>
       <div className={styles.mealDetails}>
         <h1  className={styles.mealTitle}><SiIfood/> {title}</h1>
@@ -42,7 +42,7 @@ export default function FrenchMeals({title,image,id}) {
       :
         <p><GiKnifeFork/> { completeContent}</p> 
       }
-     <a  onClick={()=>{setReadMore(!readMore)}}><h2 className={styles.readMoreLink}>{linkName}</h2></a>
+     <h2 onClick={()=>{setReadMore(!readMore)}} className={styles.readMoreLink}>{linkName}</h2 >
      <div className={styles.youtubeContainer}>
          <div className={styles.youtubeText}>
             <p>Click  to watch recipe video <FaRegHandPointRight/> </p> 

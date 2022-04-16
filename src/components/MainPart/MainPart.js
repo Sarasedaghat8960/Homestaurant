@@ -18,7 +18,7 @@ export default function MainPart({title,image,instruction,youtube}) {
     <section className={styles.container} >
     <div className={styles.meal}>
     <div className={styles.mealImage} >
-     <img src={image} alt='receipt Image' />
+     <img src={image} alt='receipt' />
      </div>
       <div className={styles.mealDetails}>
         <h1  className={styles.mealTitle}><SiIfood/> {title}</h1>
@@ -28,7 +28,7 @@ export default function MainPart({title,image,instruction,youtube}) {
       :
         <p><GiKnifeFork/> { completeContent}</p> 
       }
-     <a  onClick={()=>{setReadMore(!readMore)}}><h2 className={styles.readMoreLink}>{linkName}</h2></a>
+     <h2  onClick={()=>{setReadMore(!readMore)}} className={styles.readMoreLink}>{linkName}</h2>
      <div className={styles.youtubeContainer}>
          <div className={styles.youtubeText}>
             <p>Click  to watch recipe video <FaRegHandPointRight/> </p> 

@@ -1,6 +1,6 @@
 import styles from './UserSearchedPart.module.scss'
 import React, { useEffect, useState } from 'react'
-import { uuid } from 'uuidv4'
+
 
 export default function UserSearchedPart({title,image,id}) {
  
@@ -9,7 +9,7 @@ export default function UserSearchedPart({title,image,id}) {
   const API=`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`
   console.log(API);
   useEffect(()=>{
-    fetch(API)
+    fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
     .then(res=>res.json())
     .then(result=>{
       console.log(result.meals[0]);
@@ -22,7 +22,7 @@ export default function UserSearchedPart({title,image,id}) {
     <section className={styles.container} >
     <div className={styles.meal}>
     <div className={styles.mealImage} >
-     <img src={image} alt='receipt Image' />
+     <img src={image} alt='receipt' />
      </div>
       <div className={styles.mealDetails}>
         <h1  className={styles.mealTitle}>{title}</h1>

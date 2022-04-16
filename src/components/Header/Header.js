@@ -8,8 +8,8 @@ export default function Header() {
     
     <div className={styles.header}>
      
-     <img src={Logo} className={styles.logo}/>
-    
+     <img src={Logo} className={styles.logo} alt=" logo"/>
+   
     </div>
    
     </>

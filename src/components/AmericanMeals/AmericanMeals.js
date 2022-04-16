@@ -27,12 +27,12 @@ export default function AmericanMeals({title,image,id}) {
      setInstruction(result.meals[0].strInstructions)
      setYoutube(result.meals[0].strYoutube)
     })
-  },[id])
+  },[API])
   return (
     <section className={styles.container} >
       <div className={styles.meal}>
         <div className={styles.mealImage} >
-          <img src={image} alt='receipt Image' />
+          <img src={image} alt='receipt' />
         </div>
         <div className={styles.mealDetails}>
             <h1  className={styles.mealTitle}><SiIfood/> {title}</h1>
@@ -42,7 +42,7 @@ export default function AmericanMeals({title,image,id}) {
             :
               <p><GiKnifeFork/> { completeContent}</p> 
             }
-            <a  onClick={()=>{setReadMore(!readMore)}}><h2 className={styles.readMoreLink}>{linkName}</h2></a>
+            <button  onClick={()=>{setReadMore(!readMore)}}><h2 className={styles.readMoreLink}>{linkName}</h2></button>
             <div className={styles.youtubeContainer}>
               <div className={styles.youtubeText}>
                   <p>Click  to watch recipe video <FaRegHandPointRight/> </p> 

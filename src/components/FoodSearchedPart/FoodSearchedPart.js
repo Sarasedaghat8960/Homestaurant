@@ -7,7 +7,7 @@ export default function FoodSearchedPart({title,image,instruction,youtube}) {
     <section className={styles.container} >
       <div className={styles.meal}>
       <div className={styles.mealImage} >
-      <img src={image} alt='receipt Image' />
+      <img src={image} alt='receipt' />
       </div>
         <div className={styles.mealDetails}>
           <h1  className={styles.mealTitle}>{title}</h1>

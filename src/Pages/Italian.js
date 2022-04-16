@@ -6,25 +6,20 @@ import styles from './Pages.module.scss'
 import ItalianMeals from "../components/ItalianMeals/ItalianMeals";
 import Footer from "../components/Footer/Footer";
  function Italian() {
-     const APIITALIAN =`http://www.themealdb.com/api/json/v1/1/filter.php?a=Italian`
-     console.log('API Italian',APIITALIAN);
+    const APIITALIAN =`http://www.themealdb.com/api/json/v1/1/filter.php?a=Italian`
+    console.log('API Italian',APIITALIAN);
     const [italMeals, setItalMeals] = useState([]);
-    
-
-  
     async function getItalMeal() {
         const res = await fetch('https://www.themealdb.com/api/json/v1/1/filter.php?a=Italian');
         const dataItal = await res.json();
         console.log('ItalMeals',dataItal);
         setItalMeals(dataItal.meals);
-       
-      }
-      useEffect(() => {
+    }
+    useEffect(() => {
         getItalMeal();
       
-      },[]);
-       console.log('Italian Meals ',italMeals);
-
+    },[]);
+  console.log('Italian Meals ',italMeals);
   return (
     <div>
       <Header/>
@@ -38,10 +33,9 @@ import Footer from "../components/Footer/Footer";
                key={recipe.idMeal}
               />
             ))}
-          </div>
-          <Footer/>
-       </div>
-    
+        </div>
+      <Footer/>
+     </div>
   )
 }
 export default Italian;

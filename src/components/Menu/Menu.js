@@ -4,7 +4,6 @@ import React from 'react'
 import { FaHamburger, FaPizzaSlice , FaHome } from 'react-icons/fa'
 import { GiNoodles } from 'react-icons/gi'
 import { GiFrenchFries } from 'react-icons/gi'
-import {GrRestaurant}from 'react-icons/gr'
 import styles from './Menu.module.scss'
 
 export default function Menu() {

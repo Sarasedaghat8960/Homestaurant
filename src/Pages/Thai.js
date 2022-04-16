@@ -5,31 +5,27 @@ import Menu from "../components/Menu/Menu";
 import styles from './Pages.module.scss'
 import ThaiMeals from "../components/ThaiMeals/ThaiMeals";
 import Footer from "../components/Footer/Footer";
- function Thai() {
-     const APIThai =`http://www.themealdb.com/api/json/v1/1/filter.php?a=Thai`
-     console.log('API Thai',APIThai);
+function Thai() {
+    const APIThai =`http://www.themealdb.com/api/json/v1/1/filter.php?a=Thai`
+    console.log('API Thai',APIThai);
     const [thaiMeals, setThaiMeals] = useState([]);
-    
-
-  
     async function getItalMeal() {
         const res = await fetch('https://www.themealdb.com/api/json/v1/1/filter.php?a=Thai');
         const dataThai = await res.json();
         console.log('ItalMeals',dataThai);
         setThaiMeals(dataThai.meals);
         
-      }
-      useEffect(() => {
+    }
+    useEffect(() => {
         getItalMeal();
       
-      },[]);
-       console.log('Thai Meals ',thaiMeals);
-
+    },[]);
+    console.log('Thai Meals ',thaiMeals);
   return (
     <div>
       <Header/>
       <Menu/>
-       <div className={styles.receipts}>
+      <div className={styles.receipts}>
             {thaiMeals.map((recipe) => (
               <ThaiMeals
                 title={recipe.strMeal}
@@ -38,10 +34,9 @@ import Footer from "../components/Footer/Footer";
                key={recipe.idMeal}
               />
             ))}
-          </div>
-          <Footer/>
-       </div>
-    
+      </div>
+      <Footer/>
+      </div>
   )
 }
 export default Thai;
