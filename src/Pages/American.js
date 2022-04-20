@@ -5,6 +5,7 @@ import Menu from "../components/Menu/Menu";
 import styles from './Pages.module.scss'
 import AmericanMeals from "../components/AmericanMeals/AmericanMeals";
 import Footer from "../components/Footer/Footer";
+
  function American() {
      const APIAmerican =`http://www.themealdb.com/api/json/v1/1/filter.php?a=American`
      console.log('API American',APIAmerican);
@@ -40,6 +41,7 @@ import Footer from "../components/Footer/Footer";
             ))}
           </div>
           <Footer/>
+          
        </div>
     
   )

@@ -1,67 +1,273 @@
-.container {
-    padding: 20px;
-    margin: 0 auto;
-    max-width: 100%;
-    width: 800px;
-}
-.meal {
-    background-color: white;
+//Mobile
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+        margin: 0 auto;
+        max-width: 100%;
+        width: 800px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: row;
+    }
+    .meal {
+        background-color: white;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0px 5px 5px black;
+        border-radius: 50px;
+    }
+    .mealImage {
+        overflow: hidden;
+    }
+    .mealImage img {
+        width: 100%;
+        height: 80%;
+        object-fit: cover;
+    }
+    .mealTitle {
+        color: rgb(172, 13, 13);
+    }
+    .mealDetails {
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-top: -70px;
+    }
+    .mealDetails a {
+        color: purple;
+        text-decoration: none;
+    }
+    //youtube text and image container
+    .youtubeContainer {
+        background-color: rgb(240, 201, 41);
+        border-radius: 25px;
+        overflow: hidden;
+        box-shadow: 0px 5px 5px black;
+        width: 200px;
+        text-align: center;
+        margin: auto;
+        margin-bottom: 10px;
+    }
 
-    overflow: hidden;
-    display: flex;
-    box-shadow: 0px 5px 20px black;
-    border-radius: 51px;
-}
-.mealImage {
-    flex: 1;
-}
-.mealImage img {
-    max-width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.mealTitle {
-    color: rgb(172, 13, 13);
-}
-.mealDetails {
-    flex: 2;
-    padding: 20px;
-}
-.mealDetails button {
-    color: purple;
-    text-decoration: none;
-    border: none;
-}
-//youtube text and image container
-.youtubeContainer {
-    //background-color: rgb(219, 161, 205);
-    background-color: rgb(240, 201, 41);
-    border-radius: 25px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: row;
-    box-shadow: 0px 5px 20px black;
-    width: 500px;
-    padding-left: 50px;
-    padding-right: 50px;
-}
-.youtubeImage {
-    width: 50px;
-    height: 50px;
-}
-.youtubeImage img {
-    max-width: 100%;
-    height: 100%;
-}
-.youtubeText {
-    font-weight: 500;
-    padding-left: 15px;
-}
+    .youtubeContainer a svg {
+        text-align: center;
+        color: red;
+        font-size: 30px;
 
-//Read more and Read less text
-.readMoreLink {
-    color: rgb(172, 13, 13);
-    text-decoration: underline;
-    font-size: 15px;
-    cursor: pointer;
+        margin-top: -20px;
+    }
+    .youtubeContainer a p {
+        color: black;
+        text-align: center;
+        font-size: 15px;
+    }
+    //Read more and Read less text
+    .readMoreLink {
+        color: rgb(172, 13, 13);
+        text-decoration: underline;
+        font-size: 15px;
+        cursor: pointer;
+    }
+}
+//Tablet
+@media (min-width: 481px) and (max-width: 768px) {
+    .container {
+        padding: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin: 0 auto;
+        max-width: 100%;
+        width: 800px;
+        overflow: hidden;
+    }
+    .meal {
+        background-color: white;
+
+        overflow: hidden;
+        display: flex;
+        box-shadow: 0px 5px 5px black;
+        border-radius: 50px;
+    }
+    .mealImage {
+        flex: 1;
+        overflow: hidden;
+    }
+    .mealImage img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .mealTitle {
+        color: rgb(172, 13, 13);
+    }
+    .mealDetails {
+        flex: 2;
+        padding: 20px;
+    }
+    .mealDetails a {
+        color: purple;
+        text-decoration: none;
+    }
+    //youtube text and image container
+    .youtubeContainer {
+        background-color: rgb(240, 201, 41);
+        border-radius: 25px;
+        overflow: hidden;
+        box-shadow: 0px 5px 5px black;
+        width: 250px;
+        text-align: center;
+        margin: auto;
+    }
+
+    .youtubeContainer a svg {
+        text-align: center;
+        color: red;
+        font-size: 50px;
+        margin-top: -20px;
+    }
+    .youtubeContainer a p {
+        color: black;
+        text-align: center;
+        font-size: 20px;
+    }
+    //Read more and Read less text
+    .readMoreLink {
+        color: rgb(172, 13, 13);
+        text-decoration: underline;
+        font-size: 15px;
+        cursor: pointer;
+    }
+}
+//Surf
+@media (min-width: 769px) and (max-width: 1023px) {
+    .container {
+        padding: 10px;
+        margin: 0 auto;
+        max-width: 100%;
+        width: 800px;
+        overflow: hidden;
+    }
+    .meal {
+        background-color: white;
+
+        overflow: hidden;
+        display: flex;
+        box-shadow: 0px 5px 5px black;
+        border-radius: 50px;
+    }
+    .mealImage {
+        flex: 1;
+        overflow: hidden;
+    }
+    .mealImage img {
+        max-width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .mealTitle {
+        color: rgb(172, 13, 13);
+    }
+    .mealDetails {
+        flex: 2;
+        padding: 20px;
+    }
+    .mealDetails a {
+        color: purple;
+        text-decoration: none;
+    }
+    //youtube text and image container
+    .youtubeContainer {
+        background-color: rgb(240, 201, 41);
+        border-radius: 25px;
+        overflow: hidden;
+        box-shadow: 0px 5px 5px black;
+        width: 250px;
+        text-align: center;
+        margin: auto;
+    }
+
+    .youtubeContainer a svg {
+        text-align: center;
+        color: red;
+        font-size: 50px;
+    }
+    .youtubeContainer a p {
+        color: black;
+        text-align: center;
+        font-size: 20px;
+    }
+    //Read more and Read less text
+    .readMoreLink {
+        color: rgb(172, 13, 13);
+        text-decoration: underline;
+        font-size: 15px;
+        cursor: pointer;
+    }
+}
+//Desktop
+@media (min-width: 1024px) {
+    .container {
+        padding: 10px;
+        margin: 0 auto;
+        max-width: 100%;
+        width: 800px;
+        overflow: hidden;
+    }
+    .meal {
+        background-color: white;
+
+        overflow: hidden;
+        display: flex;
+        box-shadow: 0px 5px 5px black;
+        border-radius: 50px;
+    }
+    .mealImage {
+        flex: 1;
+        overflow: hidden;
+    }
+    .mealImage img {
+        max-width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .mealTitle {
+        color: rgb(172, 13, 13);
+    }
+    .mealDetails {
+        flex: 2;
+        padding: 20px;
+    }
+    .mealDetails a {
+        color: purple;
+        text-decoration: none;
+    }
+    //youtube text and image container
+    .youtubeContainer {
+        background-color: rgb(240, 201, 41);
+        border-radius: 25px;
+        overflow: hidden;
+        box-shadow: 0px 5px 5px black;
+        width: 250px;
+        text-align: center;
+        margin: auto;
+    }
+
+    .youtubeContainer a svg {
+        text-align: center;
+        color: red;
+        font-size: 50px;
+        margin: 0;
+    }
+    .youtubeContainer a p {
+        color: black;
+        text-align: center;
+        font-size: 20px;
+    }
+    //Read more and Read less text
+    .readMoreLink {
+        color: rgb(172, 13, 13);
+        text-decoration: none;
+        font-size: 15px;
+        cursor: pointer;
+    }
 }

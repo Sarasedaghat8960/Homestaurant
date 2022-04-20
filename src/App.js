@@ -11,6 +11,7 @@ export default function App() {
     <div className="bg"></div>
       <div className="bg bg2"></div>
       <div className="bg bg3"></div>
+     
          <BrowserRouter>
               <Routes>
                 <Route exact path="/" element={<Home/>} /> 
@@ -20,7 +21,7 @@ export default function App() {
                 <Route exact path="/French" element={<French />} />
               </Routes>
         </BrowserRouter>   
-     
+       
       </div>
   )
 }

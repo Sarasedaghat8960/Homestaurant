@@ -1,14 +1,14 @@
 .App {
-  text-align: center;
+    text-align: center;
 }
 .receipts {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 .searchedText {
-  text-align: center;
+    text-align: center;
 }
 .spinner {
-  text-align: center;
+    text-align: center;
 }

@@ -1,4 +1,26 @@
 .header {
-  height: 150px;
-  text-align: center;
+    background-image: url(/image/Logo.png);
+    background-repeat: no-repeat;
+    height: 150px;
+    text-align: center;
+}
+@media (max-width: 480px) {
+    .header {
+        background-image: url(/image/Logo.png);
+        background-repeat: no-repeat;
+        margin-left: -40px;
+    }
+}
+@media (min-width: 481px) and (max-width: 912px) {
+    .header {
+        background-image: url(/image/Logo.png);
+        background-repeat: no-repeat;
+        margin-left: 200px;
+    }
+}
+@media (min-width: 913px) {
+    .header {
+        background-image: url(/image/Logo.png);
+        background-repeat: no-repeat;
+    }
 }

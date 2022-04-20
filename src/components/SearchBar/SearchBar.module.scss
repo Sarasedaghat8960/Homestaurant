@@ -1,87 +1,277 @@
-//Default for Mobile
-.searchContainer {
-  color: black;
-}
-.searchForm {
-  min-height: 10vh;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-}
+//Mobile
+@media (max-width: 480px) {
+    .searchContainer {
+        display: flex;
+        flex-direction: column;
+        margin-top: -100px;
+        min-height: auto;
+        width: 100%;
+        height: 300px;
+        padding: 30px;
+        background-color: white;
+        overflow: hidden;
+        .searchCardContainer {
+            display: flex;
+            flex-direction: row;
 
-.searchReceipt {
-  border: none;
-  width: 40%;
-  padding: 10px;
-}
-.searchReceiptButton {
-  background-color: lightcoral;
-  border: none;
-  padding: 10px 20px;
-  color: white;
-}
-.alert {
-  color: red;
-}
-.listContainer {
-  display: flex;
-  width: 40%;
-  padding: 10px;
-  background-color: white;
-}
-.userType {
-  flex-direction: row;
-}
-.userTypeText {
-  font-weight: 700;
-}
-@media (min-width: 769px) {
-  .searchContainer {
-    color: black;
-    border-radius: 25px;
-    background: rgb(248, 246, 247);
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin: 2rem 0rem;
-    width: 100%;
-  }
-  .searchForm {
-    align-items: center;
-    justify-content: center;
-    display: flex;
-  }
+            margin: auto;
+            margin-bottom: 20px;
+            border: 6px solid orange;
+            background: linear-gradient(
+                90deg,
+                rgba(199, 10, 10, 1) 72%,
+                rgba(28, 16, 19, 1) 95%
+            );
+            width: 300px;
+            height: 100px;
+            border-radius: 40px;
+            padding-left: 20px;
+            padding-right: 20px;
+            .searchInput {
+                width: 550px;
+                border: none;
+                color: white;
+                cursor: pointer;
+                font-size: 15px;
 
-  .searchReceipt {
-    padding: 10px;
-    border: 2px solid rgb(156, 40, 40);
-    border-bottom-left-radius: 15px;
-    border-top-left-radius: 15px;
-  }
-  .searchReceiptButton {
-    // width: 40%;
-    background-color: rgb(156, 40, 40);
-    padding: 10px;
-    color: white;
-    border-bottom-right-radius: 15px;
-    border-top-right-radius: 15px;
-    border: 2px solid rgb(156, 40, 40);
-  }
+                //text-decoration: underline;
+            }
+            .searchInput input {
+                border: 0px solid transparent;
+                margin-top: 0;
+            }
+            .searchInput input:focus {
+                border: none;
+                outline: 0;
+            }
+            .searchInput select {
+                padding-top: 15px;
+                width: 150px;
+                border: 0;
+                font-size: 15px;
+                font-weight: bold;
+                color: white;
 
-  .listContainer {
-    width: 40%;
-    padding: 10px;
-    background-color: white;
-    border-bottom-left-radius: 15px;
-    border-top-left-radius: 15px;
-    border: 2px solid rgb(156, 40, 40);
-    .userType {
-      border: none;
-      border-bottom-left-radius: 15px;
-      border-top-left-radius: 15px;
+                background-color: rgb(199, 10, 10);
+            }
+            .searchInput select:focus {
+                border: none;
+                outline: 0;
+            }
+
+            .searchInput::placeholder {
+                border: none;
+                color: white;
+            }
+            .searchButton button {
+                font-size: 15px;
+                border: 0;
+                background: none;
+                color: yellow;
+                padding-right: 80px;
+                cursor: pointer;
+            }
+        }
     }
-    .userContainer {
-      border: none;
+}
+// Tablet
+@media (min-width: 481px) and(max-width:769px) {
+    .searchContainer {
+        display: flex;
+        flex-direction: row;
+        min-height: auto;
+        width: 100%;
+        height: 120px;
+        padding: 20px;
+        background-color: white;
+        overflow: hidden;
+        .searchCardContainer {
+            display: flex;
+            flex-direction: row;
+            margin: auto;
+            margin-right: 5px;
+            border: 6px solid orange;
+            background: linear-gradient(
+                90deg,
+                rgba(199, 10, 10, 1) 72%,
+                rgba(28, 16, 19, 1) 95%
+            );
+            width: 500px;
+            height: 80px;
+            border-radius: 40px;
+            padding-left: 5px;
+            padding-right: 5px;
+            .searchInput {
+                width: 450px;
+                border: none;
+                color: white;
+                cursor: pointer;
+                font-size: 15px;
+            }
+            .searchInput::placeholder {
+                border: none;
+                color: white;
+
+                padding-left: 0;
+            }
+            .searchInput input:focus {
+                border: none;
+                outline: 0;
+            }
+            .searchInput select {
+                padding-top: 20px;
+                width: 150px;
+                border: 0;
+                font-size: 15px;
+                font-weight: bold;
+                color: white;
+                background-color: rgb(199, 10, 10);
+            }
+
+            .searchButton button {
+                font-size: 15px;
+                width: 50px;
+                border: 0;
+                background: none;
+                color: yellow;
+                padding-right: 100px;
+                cursor: pointer;
+            }
+        }
     }
-  }
+}
+// Surf
+@media (min-width: 769px) and(max-width:1023px) {
+    .searchContainer {
+        display: flex;
+        flex-direction: row;
+        min-height: auto;
+        width: 100%;
+        height: 150px;
+        padding: 20px;
+        background-color: white;
+        overflow: hidden;
+        .searchCardContainer {
+            display: flex;
+            flex-direction: row;
+            margin-right: 50px;
+            border: 6px solid orange;
+            background: linear-gradient(
+                90deg,
+                rgba(199, 10, 10, 1) 72%,
+                rgba(28, 16, 19, 1) 95%
+            );
+            width: 550px;
+            height: 100px;
+            border-radius: 40px;
+            padding-left: 10px;
+            padding-right: 10px;
+            .searchInput {
+                width: 550px;
+                border: none;
+                color: white;
+                cursor: pointer;
+                font-size: 15px;
+            }
+            .searchInput input {
+                border: 0px solid transparent;
+            }
+            .searchInput input:focus {
+                border: none;
+                outline: 0;
+            }
+            .searchInput select {
+                padding-top: 20px;
+                width: 150px;
+                border: 0;
+                font-size: 15px;
+                font-weight: bold;
+                color: white;
+
+                background-color: rgb(199, 10, 10);
+            }
+
+            .searchInput::placeholder {
+                border: none;
+                color: white;
+            }
+            .searchButton button {
+                font-size: 15px;
+                border: 0;
+                background: none;
+                color: yellow;
+                padding-right: 80px;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+// Desktop
+@media (min-width: 1024px) {
+    .searchContainer {
+        display: flex;
+        flex-direction: row;
+        min-height: auto;
+        width: 100%;
+        height: 150px;
+        padding: 30px;
+        background-color: white;
+        overflow: hidden;
+        .searchCardContainer {
+            display: flex;
+            flex-direction: row;
+            margin-right: 50px;
+            border: 6px solid orange;
+            background: linear-gradient(
+                90deg,
+                rgba(199, 10, 10, 1) 72%,
+                rgba(28, 16, 19, 1) 95%
+            );
+            width: 550px;
+            height: 100px;
+            border-radius: 40px;
+            padding-left: 20px;
+            padding-right: 20px;
+            .searchInput {
+                width: 550px;
+                border: none;
+                color: white;
+                cursor: pointer;
+                font-size: 15px;
+
+                //text-decoration: underline;
+            }
+            .searchInput input {
+                border: 0px solid transparent;
+            }
+            .searchInput input:focus {
+                border: none;
+                outline: 0;
+            }
+            .searchInput select {
+                padding-top: 20px;
+                width: 150px;
+                border: 0;
+                font-size: 15px;
+                font-weight: bold;
+                color: white;
+
+                background-color: rgb(199, 10, 10);
+            }
+
+            .searchInput::placeholder {
+                border: none;
+                color: white;
+            }
+            .searchButton button {
+                font-size: 15px;
+                border: 0;
+                background: none;
+                color: yellow;
+                padding-right: 80px;
+                cursor: pointer;
+            }
+        }
+    }
 }

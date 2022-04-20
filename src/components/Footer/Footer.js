@@ -2,29 +2,26 @@ import styles from './Footer.module.scss'
 
 function Footer() {
     return (
-        <div className={styles.Footer}>
-            <div className={styles.Adress}>
+        <div className={styles.footer}>
+            <div className={styles.adress}>
                 <h3>Our address</h3>
-                <p>Sweden</p>
-                <p>Stockholm</p>
+                <h4>Sweden</h4>
+                <h4>Stockholm</h4>
                 
-
-                <div className={styles.icons}>
-                    <div className={styles.icon_facebook} />
-                    <div className={styles.icon_instagram} />
-                </div>
             </div>
            
-            <div className={styles.Logo}></div>
-            <div className={styles.NewsLetter}>
+            <div className={styles.logo}></div>
+            <div className={styles.newsLetter}>
                 <h3>Contact us</h3>
                 <p>
-                    Do you have a quaestion
-                    <br />
-                    Feel free to contact us via mail!
+                    Do you want to recieve our sugested recipe?
+                 </p>
+                 <p>   
+                    Sign up for our newsletter here! 
+                   
                 </p>
-                <input type="text" placeholder="Your Message" />
-                <button className="primary-btn">Contact us</button>
+                <input type="text" placeholder="name@mail.com" />
+                <button className={styles.footerBtn} mailto="mailto:sara.msedaghat@gmail.com" >Subscribe</button>
             </div>
         </div>
     )

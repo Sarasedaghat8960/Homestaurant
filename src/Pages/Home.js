@@ -10,7 +10,7 @@ import FoodSearchedPart from "../components/FoodSearchedPart/FoodSearchedPart";
 import IngredientSearchedPart from "../components/IngredientSearchedPart/IngredientSearchedPart";
 import UserSearchedPart from "../components/UserSearchedPart/UserSearchedPart";
 import styles from './Home.module.scss'
-//import { SpinnerRoundFilled } from "spinners-react";
+import { SpinnerRoundFilled } from "spinners-react";
 function Home() {
   //States 
   const [search, setSearch] = useState([""]);
@@ -23,34 +23,12 @@ function Home() {
   const [mealsWithIngreds, setMealsWithIngreds] = useState([]);
   const [mealsWithUsers, setMealsWithUsers] = useState([]);
   const [show, setShow] = useState(false);
-  //APIs for diferent searches and the main page 
-  //const APIFood = `https://www.themealdb.com/api/json/v1/1/search.php?s=${search}`;
+
   const APIINGRED = `https://www.themealdb.com/api/json/v1/1/filter.php?i=${ingredient}`;
   const APIUSER = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${user}`;
   console.log("ingredient from app", ingredient);
   console.log("APIINGRED", APIINGRED);
-  //fetch data for searching with food name
-  // async function getMeal() {
-  //   const res = await fetch(APIFood);
-  //   const data1 = await res.json();
-  //   console.log(data1);
-  //   setMeals(data1.meals);
-  // }
-
-  //fetch data for searching with food ingredients
-  // async function getIntMeal() {
-  //   const res2 = await fetch(APIINGRED);
-  //   const data2 = await res2.json();
-  //   console.log("data2", data2);
-  //   setMealsWithIngreds(data2.meals);
-  // }
-  // fetch data for searching with user
-  // async function getUserMeal() {
-  //   const res3 = await fetch(APIUSER);
-  //   const data3 = await res3.json();
-  //   console.log("data3", data3);
-  //   setMealsWithUsers(data3.meals);
-  // }
+ 
   // useEffect for search
   useEffect(() => {
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${search}`)
@@ -108,16 +86,16 @@ function Home() {
       <div className={styles.searchedText}>
         {isFoodSearched ? (
           <h2>
-            Search resulr for food with the word <u>{search}</u> in name
+            Search result for food with the word <u>{search}</u> in name
           </h2>
         ) : isIngredientSearched ? (
           <h2>
-            Search resulr for food with the word <u>{ingredient}</u> in
+            Search result for food with the word <u>{ingredient}</u> in
             ingredients
           </h2>
         ) : isUserSearched ? (
           <h2>
-            Search resulr for food with the category of <u>{user}</u>
+            Search result for food with the category of <u>{user}</u>
           </h2>
         ) : (
           <p></p>
@@ -177,8 +155,8 @@ function Home() {
         )
       ) : (
         <div className={styles.spinner}>
-            {/* <SpinnerRoundFilled size="15%" color="rgb(156, 40, 40)" /> */}
-
+             <SpinnerRoundFilled size="15%" color="rgb(156, 40, 40)" /> 
+            
         </div>
         
       )}

@@ -1,9 +1,7 @@
 import styles from './FrenchMeals.module.scss'
 import React, { useEffect, useState } from 'react'
-
-import YouTubeImg from '../../image/youtube.png'
 import {GiKnifeFork} from 'react-icons/gi'
-import { FaRegHandPointRight } from "react-icons/fa";
+import {FaYoutube } from "react-icons/fa";
 import {SiIfood} from 'react-icons/si';
 export default function FrenchMeals({title,image,id}) {
  
@@ -44,15 +42,10 @@ export default function FrenchMeals({title,image,id}) {
       }
      <h2 onClick={()=>{setReadMore(!readMore)}} className={styles.readMoreLink}>{linkName}</h2 >
      <div className={styles.youtubeContainer}>
-         <div className={styles.youtubeText}>
-            <p>Click  to watch recipe video <FaRegHandPointRight/> </p> 
-           
-          
-         </div>
-         <div className={styles.youtubeImage}>
-         
-            <a href={youtube}><img src={YouTubeImg} alt='Youtube'/></a>
-         </div>
+          <a href={youtube}> 
+              <p>Click  to watch recipe video </p>
+              <FaYoutube/> 
+          </a>
      </div>
         
         

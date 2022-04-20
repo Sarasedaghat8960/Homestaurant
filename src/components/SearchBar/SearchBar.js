@@ -1,6 +1,6 @@
 import styles from './SearchBar.module.scss'
 import React, { useState } from 'react'
-
+import{ FaSearch} from 'react-icons/fa'
 
 export default function SearchBar({setSearch,setIsFoodSearched,setIsIngredientSearched,setIsUserSearched,setIngredient,setUser}) {
  const [input,setInput]=useState("");
@@ -45,40 +45,41 @@ export default function SearchBar({setSearch,setIsFoodSearched,setIsIngredientSe
 
   return (
     <>
-    <div className={styles.searchContainer}>
-
-    <div className={styles.searchForm}  > 
-    <input type="text" placeholder='Type food name'   className={styles.searchReceipt}  onChange={(event)=>{event.preventDefault(); setInput(event.target.value)}} />
-      <button type="submit"  className={styles.searchReceiptButton}  onClick={getInputValue}>Search Receipt with food name</button>
-         
-     </div> 
-    <div className={styles.searchForm}>
-  
-     {/* <form className={styles.search-form}>  */}
-     <input type="text" placeholder='Type ingredient'className={styles.searchReceipt}  onChange={(event)=>{event.preventDefault(); setIngInput(event.target.value)}}/>
-      <button type="submit"  className={styles.searchReceiptButton} onClick={getIngredientValue}>Search Receipt with ingredient</button>
-  
-    {/* </form> */}
-    </div>
-    <div className={styles.searchForm}>
-    <div className={styles.listContainer}>
-    
-      <select  onChange={(e)=>{e.preventDefault();setUsInput(e.target.value)} } className={styles.userContainer} >
-      {checkList.map((item,index) => (
-          <option value={item.value} key={index}>{item.name}</option>
-      
-      ))}
-         
-    </select>
-
-    </div>
    
-    <button type="submit"  className={styles.searchReceiptButton} onClick={getUserValue}>Search Receipt with user type</button>
-
-  </div>
+    <div className={styles.searchContainer}>
+          <div className={styles.searchCardContainer}>
+              <div className={styles.searchInput}  > 
+                 <input type="text" placeholder='Search with  food name'   className={styles.searchInput}  onChange={(event)=>{event.preventDefault(); setInput(event.target.value)}} />
+               </div>
+              <div  className={styles.searchButton}>
+                  <button type="submit"   onClick={getInputValue}><FaSearch/></button>
+              </div>
+          </div> 
+          <div className={styles.searchCardContainer}>
+              <div className={styles.searchInput}  > 
+                 <input type="text" placeholder='Search with ingredient'className={styles.searchInput}  onChange={(event)=>{event.preventDefault(); setIngInput(event.target.value)}}/>
+              </div>
+              <div  className={styles.searchButton}>
+                  <button type="submit"  className={styles.searchButton} onClick={getIngredientValue}><FaSearch/></button>
+              </div>
+         </div>
+         <div className={styles.searchCardContainer}>
+         <div className={styles.searchInput}  >
+            
+                   <select  onChange={(e)=>{e.preventDefault();setUsInput(e.target.value)} } className={styles.userContainer} >
+                           {checkList.map((item,index) => (
+                         <option value={item.value} key={index}>{item.name}</option>    ))}
+                  </select>
+           </div>
+           <div  className={styles.searchButton}>
+               <button type="submit"  className={styles.searchButton} onClick={getUserValue}><FaSearch/></button>
+          </div>
+ 
 
     </div>
     
+     </div>
+
     </>
   )
 }

@@ -1,9 +1,8 @@
 import styles from './AmericanMeals.module.scss'
 import React, { useEffect, useState } from 'react'
-import YouTubeImg from '../../image/youtube.png'
 import {GiKnifeFork} from 'react-icons/gi'
-import { FaRegHandPointRight } from "react-icons/fa";
 import {SiIfood} from 'react-icons/si';
+import {FaYoutube } from "react-icons/fa";
 
 //Function for showing american meals part 
 export default function AmericanMeals({title,image,id}) {
@@ -42,16 +41,13 @@ export default function AmericanMeals({title,image,id}) {
             :
               <p><GiKnifeFork/> { completeContent}</p> 
             }
-            <button  onClick={()=>{setReadMore(!readMore)}}><h2 className={styles.readMoreLink}>{linkName}</h2></button>
+          <h2 onClick={()=>{setReadMore(!readMore)}} className={styles.readMoreLink}>{linkName}</h2>
             <div className={styles.youtubeContainer}>
-              <div className={styles.youtubeText}>
-                  <p>Click  to watch recipe video <FaRegHandPointRight/> </p> 
-              </div>
-    {/* A link to a youtube film  */}
-              <div className={styles.youtubeImage}>
-                  <a href={youtube}><img src={YouTubeImg} alt='Youtube'/></a>
-              </div>
-            </div>
+          <a href={youtube}> 
+              <p>Click  to watch recipe video </p>
+              <FaYoutube/> 
+          </a>
+     </div>
         </div>
        </div>
     </section>
