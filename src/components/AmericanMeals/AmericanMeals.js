@@ -17,7 +17,7 @@ export default function AmericanMeals({title,image,id}) {
       </div>
   const linkName=readMore?'Read Less << ':'Read More >> '
   const API=`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`
-  console.log(API);
+ 
   //Fetch Data with Id to show instruction and youtube
   useEffect(()=>{
     fetch(API)

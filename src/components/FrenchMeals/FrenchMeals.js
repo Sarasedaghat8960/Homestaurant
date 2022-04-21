@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import {GiKnifeFork} from 'react-icons/gi'
 import {FaYoutube } from "react-icons/fa";
 import {SiIfood} from 'react-icons/si';
+//Function for showing French meals part 
 export default function FrenchMeals({title,image,id}) {
  
   const [instruction,setInstruction]=useState("")

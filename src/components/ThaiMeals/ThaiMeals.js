@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import {GiKnifeFork} from 'react-icons/gi'
 import {FaYoutube } from "react-icons/fa";
 import {SiIfood} from 'react-icons/si';
+//Function for showing Thai meals part 
 export default function ThaiMeals({title,image,id}) {
  
   const [instruction,setInstruction]=useState("")
@@ -20,7 +21,7 @@ export default function ThaiMeals({title,image,id}) {
     fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
     .then(res=>res.json())
     .then(result=>{
-      // console.log(result.meals[0]);
+   
 
      setInstruction(result.meals[0].strInstructions)
      setYoutube(result.meals[0].strYoutube)

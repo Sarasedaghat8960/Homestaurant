@@ -91,9 +91,10 @@ input {
         }
     }
 }
-
-@media (min-width: 481px) {
+//Tablet
+@media (min-width: 481px) and (max-width: 767px) {
     .footer {
+        background-color: white;
         display: flex;
         padding: 5px;
         flex-direction: row;
@@ -135,7 +136,7 @@ input {
         }
     }
 }
-
+//Desktop
 @media (min-width: 768px) and (max-width: 1023px) {
     .footer {
         display: flex;
@@ -198,7 +199,7 @@ input {
         .newsLetter {
             text-align: left;
             display: block;
-            margin-left: -150px;
+            margin-left: 150px;
 
             ::placeholder {
                 text-align: left;

@@ -6,6 +6,7 @@
 .menuItem:hover {
     background: linear-gradient(to right, #2136f2, #e94057);
 }
+//Mobile
 @media (max-width: 480px) {
     .menuContainer {
         text-align: center;
@@ -73,7 +74,8 @@
         font-size: 1rem;
     }
 }
-@media (min-width: 480px) and (orientation: portrait) {
+//Tablet
+@media (min-width: 481px) and (max-width: 768px) {
     .menuContainer {
         display: flex;
         flex-direction: row;
@@ -101,7 +103,7 @@
         font-size: 2rem;
     }
 }
-
+//Desktop
 @media (min-width: 768px) and (orientation: landscape) {
     .menuContainer {
         display: flex;

@@ -21,8 +21,7 @@ export default function FoodSearchedPart({title,image,instruction,youtube}) {
      </div>
       <div className={styles.mealDetails}>
         <h1  className={styles.mealTitle}><SiIfood/> {title}</h1>
-        
-       {!readMore ?
+        {!readMore ?
         <p><GiKnifeFork/> {instruction.substring(0,100)+"..."}</p>
       :
         <p><GiKnifeFork/> { completeContent}</p> 
