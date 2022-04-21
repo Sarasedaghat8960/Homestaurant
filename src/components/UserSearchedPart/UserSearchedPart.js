@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import {GiKnifeFork} from 'react-icons/gi'
 import {FaYoutube } from "react-icons/fa";
 import {SiIfood} from 'react-icons/si';
+//show the data for search with user type 
 export default function UserSearchedPart({title,image,id}) {
   const [readMore,setReadMore]=useState(false);
   

@@ -9,7 +9,8 @@ function Thai() {
     const APIThai =`http://www.themealdb.com/api/json/v1/1/filter.php?a=Thai`
     console.log('API Thai',APIThai);
     const [thaiMeals, setThaiMeals] = useState([]);
-    async function getItalMeal() {
+    //Function for fetching data for showing thai food 
+    async function getThaiMeal() {
         const res = await fetch('https://www.themealdb.com/api/json/v1/1/filter.php?a=Thai');
         const dataThai = await res.json();
         console.log('ItalMeals',dataThai);
@@ -17,7 +18,7 @@ function Thai() {
         
     }
     useEffect(() => {
-        getItalMeal();
+        getThaiMeal();
       
     },[]);
     console.log('Thai Meals ',thaiMeals);

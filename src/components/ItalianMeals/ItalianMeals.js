@@ -15,6 +15,8 @@ export default function ItalianMeals({title,image,id}) {
       </p>
       </div>
       const linkName=readMore?'Read Less << ':'Read More >> '
+  //fetch data with Id for showing the recipe text and youtube 
+
   const API=`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`
   console.log(API);
   useEffect(()=>{

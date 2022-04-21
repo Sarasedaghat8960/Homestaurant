@@ -9,18 +9,15 @@ import Footer from "../components/Footer/Footer";
      const APIFrench =`http://www.themealdb.com/api/json/v1/1/filter.php?a=French`
      console.log('API French',APIFrench);
     const [frenchMeals, setFrenchMeals] = useState([]);
-    
-
-  
-    async function getItalMeal() {
+    //fetch data for showing French food 
+    async function getFreMeal() {
         const res = await fetch('https://www.themealdb.com/api/json/v1/1/filter.php?a=French');
         const dataFre = await res.json();
-        console.log('ItalMeals',dataFre);
         setFrenchMeals(dataFre.meals);
        
       }
       useEffect(() => {
-        getItalMeal();
+        getFreMeal();
       
       },[]);
        console.log('French Meals ',frenchMeals);

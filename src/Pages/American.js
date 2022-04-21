@@ -10,10 +10,8 @@ import Footer from "../components/Footer/Footer";
      const APIAmerican =`http://www.themealdb.com/api/json/v1/1/filter.php?a=American`
      console.log('API American',APIAmerican);
     const [amerMeals, setAmerMeals] = useState([]);
-    
-
-  
-    async function getItalMeal() {
+   //fetch data for showing American food 
+   async function getItalMeal() {
         const res = await fetch('https://www.themealdb.com/api/json/v1/1/filter.php?a=American');
         const dataAmer = await res.json();
         console.log('ItalMeals',dataAmer);
@@ -39,8 +37,8 @@ import Footer from "../components/Footer/Footer";
                key={recipe.idMeal}
               />
             ))}
-          </div>
-          <Footer/>
+      </div>
+       <Footer/>
           
        </div>
     

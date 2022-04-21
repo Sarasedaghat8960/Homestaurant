@@ -8,9 +8,9 @@ export default function SearchBar({setSearch,setIsFoodSearched,setIsIngredientSe
  const [usInput,setUsInput]=useState("");
  const checkList = [{name:"Select Category",value:""},{name:"Vegan", value:"Vegan"},{name:"Vegeterian", value:"Vegetarian"},{name:"Sea food lover", value:"Seafood"},{name:"Meat lover", value:"Beef"},{name:"Children Favourite Food", value:"Pasta"},{name:"Children Favourite Dessert", value:"Dessert"}];
 
+ // get the value of search with food name 
 
   const getInputValue=()=>{
-    console.log("input:",input);
      
       if(input){
         setSearch(input);
@@ -20,10 +20,10 @@ export default function SearchBar({setSearch,setIsFoodSearched,setIsIngredientSe
 
     }
   }
-  console.log("input",input);
+ // get the value of search with Ingredient
+
   const getIngredientValue=()=>{
     
-    console.log("IngInput:",ingInput);
     if(ingInput){
       setIngredient(ingInput);
       setIsIngredientSearched(true)
@@ -31,7 +31,7 @@ export default function SearchBar({setSearch,setIsFoodSearched,setIsIngredientSe
       setIsUserSearched(false)
      }
   }
- 
+ // get the value of search with user 
   const getUserValue=()=>{
      console.log(usInput);
      if(usInput){

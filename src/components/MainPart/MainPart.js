@@ -3,7 +3,7 @@ import {React,useState} from 'react'
 import {GiKnifeFork} from 'react-icons/gi'
 import {FaYoutube } from "react-icons/fa";
 import {SiIfood} from 'react-icons/si';
-
+//Main part that shows in home page to show recipe 
 export default function MainPart({title,image,instruction,youtube}) {
   const [readMore,setReadMore]=useState(false);
   const completeContent=<div>
