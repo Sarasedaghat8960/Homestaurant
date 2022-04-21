@@ -1,70 +1,101 @@
-# Getting Started with Create React App
+## Homestaurant: A Recipe Web Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### About the project:
 
-## Available Scripts
+Homestaurant is a recipe web application that give the user’s ability of searching with:
 
-In the project directory, you can run:
+-   Food name
+-   Food ingredient
+-   Users category such as vegetarian/vegan/meat lover/chicken lover/children’s favorite food /children favorite desert
+
+## This project can be used by:
+
+-   Everybody who enjoy cooking
+-   Everybody who cook food at home
+-   Vegetarians
+-   Persons who consume animal-derived products
+-   Families who have children
+
+## Frameworks used in project:
+
+-   React https://reactjs.org/
+
+-   SASS https://sass-lang.com/install
+
+-   React-spinners https://www.npmjs.com/package/react-spinners
+-   React-icons https://react-icons.github.io/react-icons/
+
+## Planing of the project
+
+Planing of project is done in github project in 4 sprints
+Each sprint was in one week and tasks were defined as an issue and placed in the specified sprint
+
+## API
+
+TheMealDb API https://www.themealdb.com/api.php
+
+## Start Project
+
+Git-clone: https://github.com/Sarasedaghat8960/homestaurant.git
+
+### `npm install`
 
 ### `npm start`
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-### `npm test`
+## Deploy
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Website is deployed on Netlify
+https://homestaurant.netlify.app
 
-### `npm run build`
+## User Test
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### users:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### User: Peter is 45 years old. He is vegetarian and like to have a different receipt. He likes to have more variety in his food.
 
-### `npm run eject`
+#### Task: 1) Test the search part that search with vegeterians or vegan type of user
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### User: Maria is 34 years old. She lives with his husband and her son who is 4 years old. It is important for her to cook something that is suitable for children and his son likes it.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+#### Task: 1) Test the search part thatshows children favorite food and children favorit desert
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+3.
 
-## Learn More
+#### User: Andy is 25 years old. He loves meat and likes the foods that has meat, but he wants to find a new receipt.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### Task: 1)test search with food name 2) search with ingredient 3)Test the search part that shows meat lovers food
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+4.
 
-### Code Splitting
+#### User: Sara is 40 years old. She lives with her husband and her 9 years old son. She enjoys finding new receipt and try it.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+#### Task: 1)test search with food name 2) search with ingredient3)Test the search part that shows children favorite food and children favorit desert
 
-### Analyzing the Bundle Size
+5.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+#### User: Nina is 25 years old. She lives alone and she works hard, and she is tired of repetitive and ordinary foods that she eats every day and looking for fast cooking and new receipt food.
 
-### Making a Progressive Web App
+#### Task: 1)test search with food name 2) search with ingredient 3)search with user type
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Task Success Rate
+success:1.0
+Failure 0.0
+partial success: 0.5
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+| user  | Task1 | Task2 | Task3 |
+| ----- | ----- | ----- | ----- |
+| User1 | 1.0   | ---   | ---   |
+| User2 | 0.5   | ---   | ---   |
+| User3 | 0.5   | 1.5   | 1.0   |
+| User4 | 1.0   | 1.0   | 1.0   |
+| User5 | 0.5   | 0.5   | 1.0   |
